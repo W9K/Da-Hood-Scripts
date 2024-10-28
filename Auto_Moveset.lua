@@ -51,6 +51,7 @@ _G.BoxConn = game:GetService("RunService").Heartbeat:Connect(function()
         if tonumber(boxingPath.Value) == 2500 then
             if fightingStylePath.Value ~= "Boxing" then
                 pcall(function()
+                    if player.Character:FindFirstChildWhichIsA("Tool") then player.Character.Humanoid:UnequipTools() end
                     player.Character.HumanoidRootPart.CFrame = CFrame.new(-237, 22, -1142)
                     fireclickdetector(buttonMaxSet.ClickDetector)
                 end)
